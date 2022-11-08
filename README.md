@@ -8,8 +8,18 @@ In this repository we currently only include AxisSPHYNXMHD which is ready to sim
 
 # Parallelization
 
-Currently, AxisSPHYNXMHD only uses OpenMP.
+Currently, AxisSPHYNXMHD uses OpenMP.
 
 # Compilation
 
-Any fortran compiler with OpenMP support should suffice. Simply compile the source file and launch the corresponding executable.
+Any fortran compiler with OpenMP support should suffice. Simply compile the source file, with the corresponding openmp option, and launch the executable.
+
+Example of compilation with GNU Fortran:
+```
+gfortran -fopenmp AxisSPHYNXMHD.f90 -o AxisSPHYNXMHD
+./AxisSPHYNXMHD
+```
+If you want to limit the number of OpenMP threads you can export the OMP_NUM_THREADS environment variable before executing. For example, for using 10 threads:
+```
+export OMP_NUM_THREADS=10
+```
