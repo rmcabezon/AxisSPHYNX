@@ -1662,7 +1662,7 @@ PROGRAM AxisSPHYNX_MHD
        if(mode.eq.0) then
           start=omp_get_wtime()
        else if(mode.eq.1) then
-       end if=omp_get_wtime()
-       print '(a12,a2,es12.5,a2)',label(1:),': ',end-start,' s'
-    endif
+          end=omp_get_wtime()
+          print '(a12,a2,es12.5,a2)',label(1:),': ',end-start,' s'
+       endif
   end subroutine profile
